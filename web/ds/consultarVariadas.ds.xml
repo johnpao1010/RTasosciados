@@ -1,0 +1,24 @@
+
+<DataSource
+    ID="consultarVariadas"
+    serverType="sql">
+    <fields>  
+        <field name="idFormDilig"    type="text" title="Codigo Formato"/>
+        <field name="tipoFormulario"    type="text" title="Tipo"  width="320" align="center"/>
+        <field name="fechaDil"    type="timestamp" title="Fecha diligenciamiento" width="140"   align="center"/>
+    </fields>
+
+    <operationBindings>
+        <operationBinding operationType="fetch" operationId="formsDiligenciados">
+            <customSQL>
+             
+                select diligenciamiento.id_diligenciamiento As idFormDilig, diligenciamiento.fecha_creacion As fechaDil, formulario.id_formulario As idTipoFormulario, formulario As tipoFormulario 
+                from diligenciamiento,formulario
+                where diligenciamiento.id_formulario=formulario.id_formulario AND formulario.id_formulario=$advancedCriteria.id
+                
+                
+            </customSQL>            
+        </operationBinding>
+    </operationBindings>
+
+</DataSource>

@@ -1,0 +1,13 @@
+<DataSource
+    ID="proyecto"
+    serverType="sql"
+    tableName="proyecto" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_proyecto" type="sequence" hidden="true" primaryKey="true"/>
+    
+    
+</fields>
+</DataSource>
+

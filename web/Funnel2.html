@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> <meta name="viewport" content="width=996px"/>
+        <title>Funnel Chart showing same slant angle</title>
+        <script type="text/javascript" src="widgets/jquery.min.js"></script>
+        <script type="text/javascript" src="widgets/FusionCharts.js"></script>
+        <script type="text/javascript" src="widgets/assets/prettify/prettify.js"></script>
+        <script type="text/javascript" src="widgets/assets/ui/js/json2.js"></script>
+        <script type="text/javascript" src="widgets/assets/ui/js/lib.js" ></script>
+<!--[if IE 6]>
+        <script type="text/javascript" src="widgets/assets/ui/js/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script>
+          /* select the element name, css selector, background etc */
+          DD_belatedPNG.fix('img');
+
+          /* string argument can be any CSS selector */
+        </script>
+		  <p>&nbsp;</p>
+		  <P align="center"></P>
+        <![endif]-->
+    </head>
+    <body>
+        <script type="text/javascript" src="widgets/Data/String/js/Funnel2.js" ></script>
+        
+        <div id="chartdiv" align="center">Chart will load here</div>
+        <script type="text/javascript">
+			if (GALLERY_RENDERER && GALLERY_RENDERER.search(/javascript|flash/i)==0)  FusionCharts.setCurrentRenderer(GALLERY_RENDERER); 
+            var chart = new FusionCharts("widgets/Funnel.swf", "ChartId", "500", "400", "0", "1" );
+            chart.setXMLData( dataString );
+            chart.render("chartdiv");
+        </script>
+     </body>
+ </html>

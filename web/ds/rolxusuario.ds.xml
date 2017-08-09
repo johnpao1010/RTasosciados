@@ -1,0 +1,24 @@
+<DataSource
+    ID="rolxusuario"
+    serverType="sql"
+    tableName="rolxusuario" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_rolxusuario" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+
+<operationBindings>
+    <operationBinding operationType="fetch"> 
+        <selectClause>rol.nombre_rol,$defaultSelectClause</selectClause>
+        <tableClause>rol,rolxusuario</tableClause>
+        <whereClause>
+            rol.id_rol=rolxusuario.id_rol AND ($defaultWhereClause)
+        </whereClause>
+    </operationBinding>
+    
+     <operationBinding operationType="remove" allowMultiUpdate="true"/> 
+    
+</operationBindings>   
+</DataSource>

@@ -1,0 +1,2 @@
+var dataString ={"chart":{"manageresize":"1", "animation":"0", "decimals": "0","caption": "Network Bandwidth Distribution","showPercentValues":"1","smartlinecolor":"333333","showborder":"0", "showtooltipshadow":"1"},"data":[{"value":"4","label":"Core Server Group"},{"value":"6","label":"Ancilliary Server Cluster"},{"value":"10","label":"Distribution Servers"},{"value":"2","label":"Service Provider Cluster"},{"value":"10","label":"Client Terminal Servers"},{"value":"8","label":"Client Terminals"}]}
+;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSource
+    ID="archivo"
+    serverType="sql"
+    tableName="archivo" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

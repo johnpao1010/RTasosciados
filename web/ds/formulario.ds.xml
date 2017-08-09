@@ -1,0 +1,28 @@
+<DataSource
+    ID="formulario"
+    serverType="sql"
+    tableName="formulario" autoDeriveSchema="true" >
+
+    <fields>
+    
+        <field name="id_formulario" type="sequence" hidden="true" primaryKey="true"/>
+    
+    </fields>
+
+<!--    <operationBindings>
+        <operationBinding operationType="fetch" operationId="formsDisponibles">
+            <customSQL>
+              
+                SELECT formulario.id_formulario,
+                formulario.nombre 
+                FROM formularioxrol formularioxrol, 
+                formulario formulario 
+                WHERE formularioxrol.id_formulariorol
+                in(select id_rol from rol where id_rol=$advancedCriteria.id)
+                AND formularioxrol.id_formulario=formulario.id_formulario
+
+                
+            </customSQL>            
+        </operationBinding>
+    </operationBindings>-->
+</DataSource>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @author Jhontan Alexander Peña. jpena@cltech.net. All rights reserved. CLTech 2012 -->
+<FilterSQLReport>
+    <FilterSQL id="1" name="DONANTES DIFERIDOS" parameterDate="alarma.lab7517c2" parameterReport="False">
+        <filter>DONANTES DIFERIDOS</filter>
+        <SQLColums>LAB2081C01 AS CC, LAB2081C02 AS TIPO</SQLColums>
+        <SQLTables>LAB2081</SQLTables>
+        <SQLCondition></SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping> ORDER BY LAB2081C01</SQLGrouping>
+    </FilterSQL>
+
+
+    <FilterSQL id="2" name="Detalles de Calificación por Usuarios" parameterDate="calificacion.lab7514c2" parameterReport="False">
+        <filter>Detalles de Calificación por Usuarios</filter>
+        <SQLColums>usuario.Lab04C1 as idUsuario,usuario.lab04c2+' '+usuario.lab04c3 as usuario,calificacion.lab7514C3 as calificacion,COUNT (*) as contador</SQLColums>
+        <SQLTables>lab7514 calificacion, lab04 usuario</SQLTables>
+        <SQLCondition>calificacion.lab04c1=usuario.lab04c1</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY usuario.Lab04C1,calificacion.lab7514C3, usuario.lab04c2+' '+usuario.lab04c3</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="3" name="Detalles de Calificación por Servicio" parameterDate="calificacion.lab7514c2" parameterReport="False">
+        <filter>Detalles de Calificación por Servicio</filter>
+        <SQLColums>servicio.Lab7522C1 as idServicio,servicio.lab7522C2 as servicio,calificacion.lab7514C3 as calificacion,COUNT (*) as contador</SQLColums>
+        <SQLTables>lab7514 calificacion, Lab7522 servicio</SQLTables>
+        <SQLCondition>calificacion.lab7522C1=servicio.Lab7522C1</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY servicio.Lab7522C1,calificacion.lab7514C3,servicio.lab7522C2</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="4" name="Detalles de Calificación por Sede de Laboratorio" parameterDate="calificacion.lab7514c2" parameterReport="False">
+        <filter>Detalles de Calificación por Sede de Laboratorio</filter>
+        <SQLColums>sede.Lab7515C1 as idSede,sede.Lab7515C3 as sede,calificacion.lab7514C3 as calificacion,COUNT (*) as contador</SQLColums>
+        <SQLTables>lab7514 calificacion, Lab7515 sede</SQLTables>
+        <SQLCondition>calificacion.lab7515C1=sede.Lab7515C1</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY sede.Lab7515C1,calificacion.lab7514C3,sede.Lab7515C3</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="5" name="Detalles de Pacientes Atendidos por Usuario" parameterDate="turno.Lab7500C2" parameterReport="False">
+        <filter>Detalles de Pacientes Atendidos por Usuario</filter>
+        <SQLColums>usuario.lab04c1 idUsuario,usuario.lab04c2+' '+usuario.lab04c3 as usuario,eps.lab7512c2 eps,atencion.lab7501c2 as atencion, paciente.lab7504c2 as paciente,COUNT(*) as cantidad</SQLColums>
+        <SQLTables>lab7500 turno, lab04 usuario, lab7501 atencion, lab7502 prioridad, lab7504 paciente, lab7512 eps , ( select MAX(turno.lab7500c2) as hora, paciente.lab7504c2 as prioridad,turno.lab7500c3 as turno from lab7500 turno, lab7502 prioridad, lab7504 paciente, lab7503 taquilla where turno.lab7502c1= prioridad.lab7502c1 and prioridad.lab7504c1= paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab04c1 is not null AND convert(datetime,turno.Lab7500C2, 112) |1|= $P{FECHAINICIO} AND convert(datetime,turno.Lab7500C2, 112) |2|= $P{FECHAFIN} group by paciente.lab7504c2,turno.lab7500c3) as maxpaciente</SQLTables>
+        <SQLCondition>turno.lab04c1=usuario.lab04c1 AND turno.lab7501c1=atencion.lab7501c1 AND turno.lab7502c1=prioridad.lab7502c1 AND prioridad.lab7504c1=paciente.lab7504c1 AND paciente.lab7512c1= eps.lab7512c1 AND turno.lab7500c2=maxpaciente.hora</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY usuario.lab04c1,eps.lab7512c2,atencion.lab7501c2 ,paciente.lab7504c2,usuario.lab04c2+' '+usuario.lab04c3</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="6" name="Detalles de Pacientes Atendidos por Entidad" parameterDate="turno.Lab7500C2" parameterReport="False">
+        <filter>Detalles de Pacientes Atendidos por Entidad</filter>
+        <SQLColums>eps.Lab7512C1 as idEps,eps.lab7512c2 eps,atencion.lab7501c2 as atencion, paciente.lab7504c2 as paciente,COUNT(*) as cantidad </SQLColums>
+        <SQLTables>lab7500 turno, lab7501 atencion, lab7502 prioridad, lab7504 paciente, lab7512 eps ,( select MAX(turno.lab7500c2) as hora, paciente.lab7504c2 as prioridad,turno.lab7500c3 as turno from lab7500 turno, lab7502 prioridad, lab7504 paciente, lab7503 taquilla where turno.lab7502c1= prioridad.lab7502c1 and prioridad.lab7504c1= paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab04c1 is not null AND convert(datetime,turno.Lab7500C2, 112) |1|= $P{FECHAINICIO} AND convert(datetime,turno.Lab7500C2, 112) |2|= $P{FECHAFIN} group by paciente.lab7504c2,turno.lab7500c3) as maxpaciente </SQLTables>
+        <SQLCondition>turno.lab7501c1=atencion.lab7501c1 AND turno.lab7502c1=prioridad.lab7502c1 AND prioridad.lab7504c1=paciente.lab7504c1 AND paciente.lab7512c1= eps.lab7512c1 AND turno.lab7500c2=maxpaciente.hora </SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY eps.lab7512c1,eps.lab7512c2,atencion.lab7501c2 ,paciente.lab7504c2</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="7" name="Detalles de Pacientes Atendidos por Tipos de Atención" parameterDate="turno.Lab7500C2" parameterReport="False">
+        <filter>Detalles de Pacientes Atendidos por Tipos de Atención</filter>
+        <SQLColums>atencion.lab7501c1 idAtencion,atencion.lab7501c2 as atencion, paciente.lab7504c2 as paciente,COUNT(*) as cantidad </SQLColums>
+        <SQLTables> lab7500 turno, lab7501 atencion, lab7502 prioridad, lab7504 paciente, lab7512 eps,( select MAX(turno.lab7500c2) as hora, paciente.lab7504c2 as prioridad,turno.lab7500c3 as turno from lab7500 turno, lab7502 prioridad, lab7504 paciente, lab7503 taquilla where turno.lab7502c1= prioridad.lab7502c1 and prioridad.lab7504c1= paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab04c1 is not null AND convert(datetime,turno.Lab7500C2, 112) |1|= $P{FECHAINICIO} AND convert(datetime,turno.Lab7500C2, 112) |2|= $P{FECHAFIN} group by paciente.lab7504c2,turno.lab7500c3) as maxpaciente </SQLTables>
+        <SQLCondition>turno.lab7501c1=atencion.lab7501c1 AND turno.lab7502c1=prioridad.lab7502c1 AND prioridad.lab7504c1=paciente.lab7504c1 AND paciente.lab7512c1= eps.lab7512c1 AND turno.lab7500c2=maxpaciente.hora</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY atencion.lab7501c1,atencion.lab7501c2 ,paciente.lab7504c2</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="8" name="Detalles de Pacientes Atendidos por Orientación" parameterDate="turno.Lab7500C2" parameterReport="False">
+        <filter>Detalles de Pacientes Atendidos por Orientación</filter>
+        <SQLColums>orientacion.lab7521c1 as idOrientacion, orientacion.lab7521c2 orientacion,usuario.lab04c2+' '+usuario.lab04c3 as usuario,eps.lab7512c2 eps,atencion.lab7501c2 as atencion, paciente.lab7504c2 as paciente,COUNT(*) as cantidad </SQLColums>
+        <SQLTables> lab7500 turno, lab04 usuario,lab7521 orientacion, lab7501 atencion, lab7502 prioridad, lab7504 paciente, lab7512 eps </SQLTables>
+        <SQLCondition>turno.lab04c1=usuario.lab04c1 AND turno.lab7501c1=atencion.lab7501c1 AND turno.lab7502c1=prioridad.lab7502c1 AND prioridad.lab7504c1=paciente.lab7504c1 AND paciente.lab7512c1= eps.lab7512c1 AND turno.lab7521c1 is not null AND turno.lab7521c1= orientacion.lab7521c1</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>GROUP BY orientacion.lab7521c1,orientacion.lab7521c2,eps.lab7512c2,atencion.lab7501c2 ,paciente.lab7504c2,usuario.lab04c2+' '+usuario.lab04c3</SQLGrouping>
+    </FilterSQL>
+
+    <FilterSQL id="9" name="Promedios de Oportunidades de Atención Ambulatoria de Usuarios" parameterDate="alarma.lab7517c2" parameterReport="False">
+        <filter>Promedios de Oportunidades de Atención Ambulatoria de Usuarios</filter>
+        <SQLColums></SQLColums>
+        <SQLTables></SQLTables>
+        <SQLCondition></SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping></SQLGrouping>
+        <SQLProcedures>exec Lab7500_GetByLab7500C2_NS $P{FECHAINICIO},$P{FECHAFIN}</SQLProcedures>
+    </FilterSQL>
+
+    <FilterSQL id="10" name="Último Turno Atendido por Tipo de Paciente" parameterDate="turno.Lab7500C2" parameterReport="False">
+        <filter>Último Turno Atendido por Tipo de Paciente</filter>
+        <SQLColums>turno.lab7500c1 as idTurno,paciente.lab7504c2 as paciente, turno.lab7500c2 as fecha,eps.lab7512c2 as eps</SQLColums>
+        <SQLTables>lab7500 turno, lab7502 prioridad, lab7504 paciente, lab7503 taquilla,Lab7512 eps,(select MAX(turno.lab7500c2) as hora, paciente.lab7504c2 as prioridad, eps.lab7512c2 as eps from   lab7500 turno, lab7502 prioridad, lab7504 paciente, lab7503 taquilla, Lab7512 eps where turno.lab7502c1= prioridad.lab7502c1 and prioridad.lab7504c1= paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab04c1 is not null and paciente.Lab7512C1=eps.Lab7512C1 AND convert(datetime,turno.Lab7500C2, 112) |1|= $P{FECHAINICIO}  AND convert(datetime,turno.Lab7500C2, 112) |2|= $P{FECHAFIN}  group by paciente.lab7504c2,eps.lab7512c2) as maxpaciente</SQLTables>
+        <SQLCondition>turno.lab7502c1= prioridad.lab7502c1 and prioridad.lab7504c1= paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab04c1 is not null and paciente.Lab7512C1=eps.Lab7512C1 AND turno.lab7500c2=maxpaciente.hora </SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping>ORDER BY turno.lab7500c2</SQLGrouping>
+        <SQLProcedures></SQLProcedures>
+    </FilterSQL>
+
+    <FilterSQL id="11" name="Nivel de Servicio" parameterDate="alarma.lab7517c2" parameterReport="False">
+        <filter>Nivel de Servicio</filter>
+        <SQLColums></SQLColums>
+        <SQLTables></SQLTables>
+        <SQLCondition></SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping></SQLGrouping>
+        <SQLProcedures>exec Lab7500_GetByLab7500C2_NSTurno $P{FECHAINICIO},$P{FECHAFIN}</SQLProcedures>
+    </FilterSQL>
+
+    <FilterSQL id="12" name="Línea de Vida de Turno" parameterDate="a.lab7500c2" parameterReport="True">
+        <filter>Línea de Vida de Turno</filter>
+        <SQLColums>a.lab7500c2 as fechaT,convert(varchar, a.lab7500c2, 8) as horas, i.lab7504c2 as prioridad, j.lab7512c2 as procedencia, g.lab7518c2 as grupo, c.lab7501c2 as tipo_atencion, d.lab7503c2 as taquilla, b.lab04c2+' '+b.lab04c3 as usuario, e.lab7511c2 estado, f.lab7507c2 as motivo_cancelacion, a.lab7500c5 as reserva, a.lab7500c6 as episodio </SQLColums>
+        <SQLTables> lab7500 a left join lab04 b on a.lab04c1 = b.lab04c1 join lab7501 c on a.lab7501c1 = c.lab7501c1 left join lab7503 d on a.lab7503c1 = d.lab7503c1 join lab7511 e on a.lab7511c1 = e.lab7511c1 left join lab7507 f on a.lab7507c1 = f.lab7507c1 left join lab7518 g on a.lab7518c1 = g.lab7518c1 join lab7502 h on a.lab7502c1 = h.lab7502c1, lab7504 i, lab7512 j </SQLTables>
+        <SQLCondition> h.lab7504c1 = i.lab7504c1 and h.lab7512c1 = j.lab7512c1 </SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping></SQLGrouping>
+        <SQLProcedures></SQLProcedures>
+    </FilterSQL>
+
+    <FilterSQL id="13" name="Listado de Turnos Cancelados" parameterDate="turno.lab7500c2" parameterReport="True">
+        <filter>Listado de Turnos Cancelados</filter>
+        <SQLColums>taquilla.lab7503c1 as taquilla, atencion.lab7501C2 as atencion</SQLColums>
+        <SQLTables>lab7500 turno, lab7501 atencion, lab7502 prioridad, lab7504 paciente, lab7511 estado, lab7503 taquilla, lab7507 cancel</SQLTables>
+        <SQLCondition>turno.lab7511c1= estado.lab7511c1 and turno.lab7501c1=atencion.lab7501c1 and turno.lab7502c1=prioridad.lab7502c1 and prioridad.lab7504c1=paciente.lab7504c1 and turno.lab7503c1= taquilla.lab7503c1 and turno.lab7507c1 is not null and turno.lab7507c1=cancel.lab7507c1 and estado.lab7511c1=$P{idEstado}</SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping> group by taquilla.lab7503c1,atencion.lab7501C2 order by taquilla.lab7503c1 </SQLGrouping>
+        <SQLProcedures></SQLProcedures>
+    </FilterSQL>
+    <FilterSQL id="20" name="Reporte" parameterDate="alarma.lab7517c2" parameterReport="False">
+        <filter>Reporte</filter>
+        <SQLColums>alarma.lab7517c1 as idAlarma,turno.lab7500c3 as turno,lab.lab7515c1 as idLab,alarma.lab7517c2 as fechaGeneracion, alarma.lab7517c3 as fechaAtencion, atencion.lab7501c2 as atencion,alarma.lab7517c4 as estadoAlarma, tipoAlarma.lab7520c2 as tipoAlarma,usuario.lab04c2+' '+usuario.lab04c3 as usuarioAtendio, paciente.lab7504c2 as paciente</SQLColums>
+        <SQLTables>lab7517 alarma left JOIN lab04 usuario ON alarma.lab04c1=usuario.lab04c1, lab7520 tipoAlarma, lab7500 turno, lab7515 lab,  lab7501 atencion, lab7502 prioridad, lab7504 paciente </SQLTables>
+        <SQLCondition>alarma.lab7520c1=tipoAlarma.lab7520c1 AND alarma.lab7500c1=turno.lab7500c1 AND turno.lab7515c1=lab.lab7515c1 AND turno.Lab7501C1=atencion.lab7501c1 AND turno.lab7502c1=prioridad.lab7502c1 AND prioridad.lab7504c1= paciente.lab7504c1 </SQLCondition>
+        <SQLFilter></SQLFilter>
+        <SQLGrouping> ORDER BY turno.lab7500c2, turno.lab7500c3</SQLGrouping>
+    </FilterSQL>
+</FilterSQLReport>

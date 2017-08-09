@@ -1,0 +1,12 @@
+<DataSource
+    ID="rol"
+    serverType="sql"
+    tableName="rol" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_rol" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>
+

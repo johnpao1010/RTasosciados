@@ -1,0 +1,17 @@
+<DataSource
+    ID="estructuraarbol"
+    serverType="sql"
+    recordName="registro"
+    titleField="nombre"
+    tableName="estructuraarbol" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_estructura" type="sequence" hidden="true" primaryKey="true"/>
+    <field name="nombre"       type="text"    title="Nombre"/>
+    <field name="padre"         type="integer" foreignKey="registro.id_estructura"  rootValue="1" detail="true"/>
+    <field name="tipos"         type="text"/>
+    <field name="codigofk"      type="integer"/>
+    
+</fields>
+</DataSource>

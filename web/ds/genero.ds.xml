@@ -1,0 +1,11 @@
+<DataSource
+    ID="genero"
+    serverType="sql"
+    tableName="genero" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_genero"  hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

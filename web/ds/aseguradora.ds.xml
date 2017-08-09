@@ -1,0 +1,11 @@
+<DataSource
+    ID="aseguradora"
+    serverType="sql"
+    tableName="aseguradora" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="idaseguradora" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

@@ -1,0 +1,11 @@
+<DataSource
+    ID="respuesta_formulario"
+    serverType="sql"
+    tableName="respuesta_formulario" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_respuestaformulario" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

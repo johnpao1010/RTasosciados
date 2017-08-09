@@ -1,0 +1,11 @@
+<DataSource
+    ID="formularioxrol"
+    serverType="sql"
+    tableName="formularioxrol" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_formulariorol" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

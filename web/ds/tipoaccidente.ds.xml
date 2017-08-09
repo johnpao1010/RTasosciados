@@ -1,0 +1,11 @@
+<DataSource
+    ID="tipoaccidente"
+    serverType="sql"
+    tableName="tipoaccidente" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="idtipoaccidente" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

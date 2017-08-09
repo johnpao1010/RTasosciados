@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @author Jhontan Alexander Peña. jpena@cltech.net. All rights reserved. CLTech 2012 -->
+<FilterGUI>
+    <Filter id="1" name="Consolidado Trimestral de Pruebas Confirmatorias">
+        <description>Seleccione Filtro</description>
+        <countCriterion>6</countCriterion>
+        <criterionFilter>
+            <criterion>
+                <id>1</id>
+                <name>VIH</name>
+                <reporteId>1</reporteId>
+            </criterion>
+            <criterion>
+                <id>2</id>
+                <name>Hepatitis B</name>
+                <reporteId>2</reporteId>
+            </criterion>
+            <criterion>
+                <id>3</id>
+                <name>Hepatitis C</name>
+                <reporteId>4</reporteId>
+            </criterion>
+             <criterion>
+                <id>4</id>
+                <name>Malaria</name>
+                <reporteId>3</reporteId>
+            </criterion>
+             <criterion>
+                <id>5</id>
+                <name>Sífilis</name>
+                <reporteId>5</reporteId>
+             </criterion>
+        </criterionFilter>
+    </Filter>
+
+    <Filter id="2" name="Reporte Estadístico Mensual de Servicos Transfusionales">
+        <description>Seleccione Filtro</description>
+        <countCriterion>4</countCriterion>
+        <criterionFilter>
+            <criterion>
+                <id>1</id>
+                    <name>Movimiento Hemocomponentes</name>
+                <reporteId>6</reporteId>
+            </criterion>
+            <criterion>
+                <id>2</id>
+                <name>Hemocomponentes Transfundidos</name>
+                <reporteId>7</reporteId>
+            </criterion>
+            <criterion>
+                <id>3</id>
+                <name>Reacciones Adversas a la Transfusión</name>
+                <reporteId>8</reporteId>
+            </criterion>
+            <criterion>
+                <id>4</id>
+                <name>Unidades Incineradas</name>
+                <reporteId>9</reporteId>
+            </criterion>
+        </criterionFilter>
+    </Filter>
+
+    <Filter id="3" name="Reporte Estadístico Mensual de Bancos de Sangre">
+        <description>Seleccione Filtro</description>
+        <countCriterion>3</countCriterion>
+        <criterionFilter>
+            <criterion>
+                <id>1</id>
+                <name>Donantes Potenciales</name>
+                <reporteId>10</reporteId>
+            </criterion>
+            <criterion>
+                <id>2</id>
+                <name>Reacciones Adversas a la Transfusión</name>
+                <reporteId>11</reporteId>
+            </criterion>
+  
+            <criterion>
+                <id>4</id>
+                <name>Unidades Incineradas</name>
+                <reporteId>13</reporteId>
+            </criterion>
+
+
+        </criterionFilter>
+    </Filter>
+
+    <Filter id="4" name="DONANTES DIFERIDOS">
+        <description>Seleccione Filtro</description>
+        <countCriterion>2</countCriterion>
+        <criterionFilter>
+            <criterion>
+                <id>1</id>
+                <name>Tipo Diferido</name>
+                <reporteId>22</reporteId>
+            </criterion>
+        </criterionFilter>
+    </Filter>
+
+    <Filter id="5" name="Reporte 4">
+        <description>Seleccione Filtro</description>
+        <countCriterion>2</countCriterion>
+        <criterionFilter>
+            <criterion>
+                <id>1</id>
+                <name>Criterio 1</name>
+                <reporteId>14</reporteId>
+            </criterion>
+            <criterion>
+                <id>2</id>
+                <name>Criterio 2</name>
+                <reporteId>14</reporteId>
+            </criterion>
+            <criterion>
+                <id>3</id>
+                <name>Criterio 3</name>
+                <reporteId>14</reporteId>
+            </criterion>
+        </criterionFilter>
+    </Filter>
+</FilterGUI>

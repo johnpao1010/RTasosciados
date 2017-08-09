@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>graphicEngine</servlet-name>
+        <servlet-class>net.sigpue.server.servlet.GraphicEngine</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>graphicEngine</servlet-name>
+        <url-pattern>/graphicEngine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioSigpue</servlet-name>
+        <url-pattern>/sigpue/serviciosigpue</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Autenticacion</servlet-name>
+        <url-pattern>/autenticacion.rtasociados</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+    <context-param>
+        <!-- max size of the upload request -->
+        <param-name>maxSize</param-name>
+        <param-value>3145728</param-value>
+    </context-param>
+    <context-param>
+        <description>URL del descriptor XML para la generación de los reportes</description>
+        <param-name>ReportesXML</param-name>
+        <param-value>resources/reports/Reportes.xml</param-value>
+    </context-param>
+    <context-param>
+        <description>URL del descriptor XML para la generación de los componentes gráficos de los filtros</description>
+        <param-name>FilterGUIXML</param-name>
+        <param-value>resources/reports/FilterGUI.xml</param-value>
+    </context-param>
+    <context-param>
+        <description>URL del descriptor XML para la generación de las sentencias SQL de los reportes</description>
+        <param-name>FilterSQLReport</param-name>
+        <param-value>resources/reports/FilterSQLReport.xml</param-value>
+    </context-param>
+    <filter>
+        <filter-name>CompressionFilter</filter-name>
+        <filter-class>com.isomorphic.servlet.CompressionFilter</filter-class>
+    </filter>
+    <!-- CompressionFilter for dynamic compression -->
+    <filter-mapping>
+        <filter-name>CompressionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- //<FileLoader -->
+    <!-- The IDACall servlet handles all Built-in DataSource operations -->
+    <servlet>
+        <servlet-name>IDACall</servlet-name>
+        <servlet-class>com.isomorphic.servlet.IDACall</servlet-class>
+    </servlet>
+    <!-- The RESTHandler servlet is like IDACall, but for REST requests -->
+    <servlet>
+        <servlet-name>RESTHandler</servlet-name>
+        <servlet-class>com.isomorphic.servlet.RESTHandler</servlet-class>
+    </servlet>
+    <!-- The DataSourceLoader servlet returns Javascript representations of the dataSources whose
+         ID's are passed to it - it is an alternative to using the <loadDS> JSP tag -->
+    <servlet>
+        <servlet-name>DataSourceLoader</servlet-name>
+        <servlet-class>com.isomorphic.servlet.DataSourceLoader</servlet-class>
+    </servlet>
+    <!-- The screenLoader servlet loads screen definitions in javascript notation -->
+    <servlet>
+        <servlet-name>screenLoader</servlet-name>
+        <servlet-class>com.isomorphic.servlet.ScreenLoaderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Autenticacion</servlet-name>
+        <servlet-class>net.sigpue.server.servlet.Autenticacion</servlet-class>
+    </servlet>
+    <!-- The FileDownload servlet downloads static files, like a webserver -->
+    <servlet>
+        <servlet-name>FileDownload</servlet-name>
+        <servlet-class>com.isomorphic.servlet.FileDownload</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServicioSigpue</servlet-name>
+        <servlet-class>net.sigpue.server.ServicioSigpueImpl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <!-- This is the default servlet, it puts files in session -->
+        <servlet-class>net.sigpue.server.UploadServlet</servlet-class>
+    </servlet>
+    <!-- Init: initializes SmartGWT framework.  Note that we invoke the Init logic from 
+	     both a Listener and a load-on-startup Servlet in this file - see the client-side 
+	     documentation topic "com.smartgwt.client.docs.ServerInit" for a discussion of this.  -->
+    <listener>
+        <listener-class>com.isomorphic.base.InitListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Init</servlet-name>
+        <servlet-class>com.isomorphic.base.Init</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>HttpProxy</servlet-name>
+        <servlet-class>com.isomorphic.servlet.HttpProxyServlet</servlet-class>
+    </servlet>
+    <!-- The PreCache servlet initializes when the servlet engine starts up and pre-loads 
+         data need for all client requests.  This is optional, and improves performance
+         of the first few page requests.  PreCache cannot be invoked by a browser, because
+         there is no "servlet-mapping" defined for it. -->
+    <!-- PreCache is disabled by default because of an issue when debugging
+         the project for the first time. However, it can be safely enabled
+         when compiling with the GWT compiler prior to deployment. See
+         the README.txt for more information. -->
+    <servlet>
+        <servlet-name>PreCache</servlet-name>
+        <servlet-class>com.isomorphic.servlet.PreCache</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!-- RPCManager uses this URL by default for Built-in DataSource operations -->
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>net.sigpue.server.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IDACall</servlet-name>
+        <url-pattern>/sigpue/sc/IDACall/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RESTHandler</servlet-name>
+        <url-pattern>/sigpue/sc/RESTHandler/*</url-pattern>
+    </servlet-mapping>
+    <!-- DataSourceLoader requests -->
+    <servlet-mapping>
+        <servlet-name>DataSourceLoader</servlet-name>
+        <url-pattern>/sigpue/sc/DataSourceLoader</url-pattern>
+    </servlet-mapping>
+    <!-- The screenLoader servlet loads screen definitions in javascript notation -->
+    <servlet-mapping>
+        <servlet-name>screenLoader</servlet-name>
+        <url-pattern>/sigpue/sc/screenLoader</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HttpProxy</servlet-name>
+        <url-pattern>/sigpue/sc/HttpProxy/*</url-pattern>
+    </servlet-mapping>
+    <!-- Use FileDownload servlet to download all static content that's part of the skin, such as
+         image files, so we can set Expires headers and other cache control directives.  In a
+         production deployment, you'd want to use a webserver such as Apache to do this.  
+    -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/sigpue/sc/skins/*</url-pattern>
+    </servlet-mapping>
+    <!-- serve ISC modules compressed, with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/sigpue/sc/system/modules/*</url-pattern>
+    </servlet-mapping>
+    <!-- serve ISC development modules compressed, with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/sigpue/sc/system/development/*</url-pattern>
+    </servlet-mapping>
+    <!-- server skin assets with expires headers -->
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/sigpue/sc/system/reference/skin/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>*.gupld</url-pattern>
+    </servlet-mapping>
+    <jsp-config>
+        <!-- Isomorphic JSP tags -->
+        <taglib>
+            <taglib-uri>isomorphic</taglib-uri>
+            <taglib-location>/WEB-INF/iscTaglib.xml</taglib-location>
+        </taglib>
+    </jsp-config>
+    <mime-mapping>
+        <extension>manifest</extension>
+        <mime-type>text/cache-manifest</mime-type>
+    </mime-mapping>
+</web-app>

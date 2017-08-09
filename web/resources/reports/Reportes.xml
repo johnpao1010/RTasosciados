@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportes>
+    <reporte id="1">
+        <name>Informe Pruebas Confirmatorias VIH</name>
+        <numeroParametros>1</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Procedencia</label>
+                <name>procedencia</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <parametros>
+            <parametro>
+                <id>2</id>
+                <label>Género</label>
+                <name>genero</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <parametros>
+            <parametro>
+                <id>3</id>
+                <label>Edad</label>
+                <name>alarma.lab7517c1</name>
+                <type>int</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>resources/ireport/reportes/HEM_Reporte3.jasper</patch>
+    </reporte>
+    <reporte id="2">
+        <name>Informe Pruebas Confirmatorias Hepatitis B</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+           <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Procedencia</label>
+                <name>procedencia</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <parametros>
+            <parametro>
+                <id>2</id>
+                <label>Género</label>
+                <name>genero</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <parametros>
+            <parametro>
+                <id>3</id>
+                <label>Edad</label>
+                <name>alarma.lab7517c1</name>
+                <type>int</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        </parametros>
+        <patch>reportes/filtrosAlarma.jasper</patch>
+    </reporte>
+    <reporte id="3">
+        <name>Informe Pruebas Confirmatorias Hepatitis C</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametros>
+                <parametro>
+                    <id>1</id>
+                    <label>Procedencia</label>
+                    <name>procedencia</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>2</id>
+                    <label>Género</label>
+                    <name>genero</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>3</id>
+                    <label>Edad</label>
+                    <name>alarma.lab7517c1</name>
+                    <type>int</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros> 
+        </parametros>
+        <patch>reportes/filtrosAlarma.jasper</patch>
+    </reporte>
+    <reporte id="4">
+        <name>Informe Pruebas Confirmatorias Malaria</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametros>
+                <parametro>
+                    <id>1</id>
+                    <label>Procedencia</label>
+                    <name>procedencia</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>2</id>
+                    <label>Género</label>
+                    <name>genero</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>3</id>
+                    <label>Edad</label>
+                    <name>alarma.lab7517c1</name>
+                    <type>int</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros> 
+        </parametros>
+        <patch>reportes/filtrosAlarma.jasper</patch>
+    </reporte>
+    <reporte id="5">
+        <name>Informe Pruebas Confirmatorias Sífilis</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametros>
+                <parametro>
+                    <id>1</id>
+                    <label>Procedencia</label>
+                    <name>procedencia</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>2</id>
+                    <label>Género</label>
+                    <name>genero</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>3</id>
+                    <label>Edad</label>
+                    <name>alarma.lab7517c1</name>
+                    <type>int</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros> 
+        </parametros>
+        <patch>reportes/filtrosAlarma.jasper</patch>
+    </reporte>
+    <reporte id="6">
+        <name>Informe Movimiento de Hemocomponentes</name>
+        <numeroParametros>1</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Grado</label>
+                <name>grado</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/filtrosAlarma.jasper</patch>
+    </reporte>
+
+    <reporte id="7">
+        <name>Informe Hemocomponentes Transfundidos</name>
+        <numeroParametros>1</numeroParametros>
+        <FilterSQL_ID>2</FilterSQL_ID>
+        <parametros>
+           <parametro>
+                <id>1</id>
+                <label>Grado</label>
+                <name>grado</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/CalificacionesUsuarios.jasper</patch>
+    </reporte>
+
+    <reporte id="8">
+        <name>Informe Reacciones Adversas a la Transfusión</name>
+        <numeroParametros>1</numeroParametros>
+        <FilterSQL_ID>3</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Tipo de Reacción</label>
+                <name>reaccion</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/CalificacionesServicios.jasper</patch>
+    </reporte>
+
+    <reporte id="9">
+        <name>Reporte Unidades Incineradas</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>4</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Causa de Incineración</label>
+                <name>incineracion</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Responsable</label>
+                <name>responsable</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/CalificacionesSedes.jasper</patch>
+    </reporte>
+    <!-- REPORTES DE CANTIDAD DE USUARIOS ATENDIDOS -->
+    <reporte id="10">
+        <name>Reporte de Donantes Potenciales</name>
+        <numeroParametros>5</numeroParametros>
+        <FilterSQL_ID>5</FilterSQL_ID>
+        <parametros>
+            <parametros>
+                <parametro>
+                    <id>2</id>
+                    <label>Género</label>
+                    <name>genero</name>
+                    <type>ComboBoxItem</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros>
+            <parametros>
+                <parametro>
+                    <id>3</id>
+                    <label>Edad</label>
+                    <name>alarma.lab7517c1</name>
+                    <type>int</type>
+                    <Required>True</Required>
+                </parametro>
+            </parametros> 
+        </parametros>
+        <patch>reportes/PacientesAtendidosUsuarios.jasper</patch>
+    </reporte>
+
+    <reporte id="11">
+        <name>Informe Reacciones Adversas a la Transfusión</name>
+        <numeroParametros>1</numeroParametros>
+        <FilterSQL_ID>3</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Tipo de Reacción</label>
+                <name>reaccion</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/CalificacionesServicios.jasper</patch>
+    </reporte>
+
+    <reporte id="12">
+        <name>Reporte de Fraccionamiento</name>
+        <numeroParametros>0</numeroParametros>
+        <FilterSQL_ID>7</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Cantidad</label>
+                <name>cantidad</name>
+                <type>int</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/PacientesAtendidosTiposAtencion.jasper</patch>
+    </reporte>
+
+        <reporte id="13">
+        <name>Reporte Unidades Incineradas</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>4</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Causa de Incineración</label>
+                <name>incineracion</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Responsable</label>
+                <name>responsable</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/CalificacionesSedes.jasper</patch>
+    </reporte>
+
+    <!-- REPORTES OPORTUNIDADES DE ATENCIÓN AMBULATORIA -->
+    <reporte id="14">
+        <name>Informe</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>9</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Parametro 1</label>
+                <name>parametro</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/OportunidadesAtencionAmbulatoriaPromedios.jasper</patch>
+    </reporte>
+
+    <!-- REPORTES ULTIMO TURNO ATENDIDO POR TIPO DE PACIENTE-->
+    <reporte id="15">
+        <name>Ultimo Turnos Atendidos por Tipo de Paciente</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>10</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Fecha Inicio</label>
+                <name>FECHAINICIO</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Fecha Fin</label>
+                <name>FECHAFIN</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>3</id>
+                <label>Entidad</label>
+                <name>eps.lab7512c1</name>
+                <type>ComboBoxItem</type>
+                <Required>False</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/UltimoTurno.jasper</patch>
+    </reporte>
+
+    <!-- NIVEL DE SERVICIO FILTER -->
+    <reporte id="16">
+        <name>Detalles de Atención</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>9</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Fecha Inicio</label>
+                <name>FECHAINICIO</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Fecha Fin</label>
+                <name>FECHAFIN</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/OportunidadesAtencionAmbulatoriaGeneralAUX.jasper</patch>
+    </reporte>
+
+    <!-- NIVEL DE SERVICIO FILTER -->
+    <reporte id="17">
+        <name>Nivel de Servicio</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>11</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Fecha Inicio</label>
+                <name>FECHAINICIO</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Fecha Fin</label>
+                <name>FECHAFIN</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/NivelServicioFilter.jasper</patch>
+    </reporte>
+
+    <reporte id="18">
+        <name>Trazabilidad de Turno</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>12</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Turno</label>
+                <name>a.lab7500c3</name>
+                <type>int</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>3</id>
+                <label>Fecha</label>
+                <name>fecha</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Sede</label>
+                <name>a.lab7515c1</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/trazabilidad_turno.jasper</patch>
+    </reporte>
+
+    <reporte id="19">
+        <name>Listado de Turnos Cancelados</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>13</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Fecha Inicio</label>
+                <name>FECHAINICIO</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Fecha Fin</label>
+                <name>FECHAFIN</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>3</id>
+                <label>Atención</label>
+                <name>atencion.lab7501c1</name>
+                <type>ComboBoxItem</type>
+                <Required>False</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/tunosNoAtendidos.jasper</patch>
+    </reporte>
+    <reporte id="20">
+        <name>Trazabilidad de Turno</name>
+        <numeroParametros>3</numeroParametros>
+        <FilterSQL_ID>12</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Turno</label>
+                <name>a.lab7500c3</name>
+                <type>int</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>3</id>
+                <label>Fecha</label>
+                <name>fecha</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+            <parametro>
+                <id>2</id>
+                <label>Sede</label>
+                <name>a.lab7515c1</name>
+                <type>ComboBoxItem</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>reportes/trazabilidad_turnoGeneral.jasper</patch>
+    </reporte>
+    
+    
+    <reporte id="21">
+        <name>Informe Donatanes Diferidos Por Período</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>1</id>
+                <label>Fecha Inicio</label>
+                <name>FECHAINICIO</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <parametros>
+            <parametro>
+                <id>2</id>
+                <label>Fecha Fin</label>
+                <name>FECHAFIN</name>
+                <type>Date</type>
+                <Required>True</Required>
+            </parametro>
+        </parametros>
+        <patch>resources/ireport/HEM_Reporte1.jasper</patch>
+    </reporte>
+    
+    <reporte id="22">
+        <name>Informe Donatanes Diferidos Por Período</name>
+        <numeroParametros>2</numeroParametros>
+        <FilterSQL_ID>1</FilterSQL_ID>
+        <parametros>
+            <parametro>
+                <id>2</id>
+                <label>Tipo Diferido</label>
+                <name>LAB2081C02</name>
+                <type>ComboBoxItem</type>
+                <Required>False</Required>
+            </parametro>
+        </parametros>
+        <patch>resources/ireport/HEM_Reporte1.jasper</patch>
+    </reporte>
+</reportes>
+
+

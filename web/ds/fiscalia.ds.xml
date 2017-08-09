@@ -1,0 +1,11 @@
+<DataSource
+    ID="fiscalia"
+    serverType="sql"
+    tableName="fiscalia" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="idfiscalia"  hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

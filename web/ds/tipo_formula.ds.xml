@@ -1,0 +1,11 @@
+<DataSource
+    ID="tipo_formula"
+    serverType="sql"
+    tableName="tipo_formula" autoDeriveSchema="true" >
+
+<fields>
+    
+    <field name="id_tipoformulario" type="sequence" hidden="true" primaryKey="true"/>
+    
+</fields>
+</DataSource>

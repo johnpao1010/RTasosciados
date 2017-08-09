@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+
+<module rename-to="sigpue">
+    <inherits name="com.google.gwt.user.User"/>
+    <inherits name="com.smartgwt.tools.SmartGwtTools"/>
+    <inherits name="com.smartgwtpower.tools.Tools"/> 
+    <inherits name="com.smartgwtpower.SmartGwtPower"/>
+    
+<!--    <inherits name="com.smartgwt.Analytics"/>
+    <inherits name="com.smartgwt.Drawing"/>
+    <inherits name="com.smartgwt.Charts"/>-->
+
+    <inherits name="gwtupload.GWTUpload"/>
+    <stylesheet src="Upload.css"/>
+
+    <inherits name="net.cltech.lib.Library"/>
+    <stylesheet src="cltech_ins.css"/>
+    <set-property name="user.agent" value="gecko1_8"/>
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <extend-property name="locale" values="es" />
+    <!-- Inherit the default GWT style sheet. You can change -->
+    <!-- the theme of your GWT application by uncommenting -->
+    <!-- any one of the following lines. -->
+    <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+    <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+    <!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/> -->
+
+    <entry-point class="net.sigpue.client.PrincipalEntryPoint"/>
+    
+    <!--<set-property name="user.agent" value="gecko1_8"/>-->
+    <!-- Do not define servlets here, use web.xml -->
+</module>
